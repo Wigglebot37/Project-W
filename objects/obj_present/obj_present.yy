@@ -1,0 +1,42 @@
+{
+  "spriteId": {
+    "name": "spr_trplayerpink",
+    "path": "sprites/spr_trplayerpink/spr_trplayerpink.yy",
+  },
+  "solid": false,
+  "visible": true,
+  "spriteMaskId": {
+    "name": "spr_shadow",
+    "path": "sprites/spr_shadow/spr_shadow.yy",
+  },
+  "persistent": false,
+  "parentObjectId": {
+    "name": "obj_item_par",
+    "path": "objects/obj_item_par/obj_item_par.yy",
+  },
+  "physicsObject": false,
+  "physicsSensor": false,
+  "physicsShape": 1,
+  "physicsGroup": 0,
+  "physicsDensity": 0.5,
+  "physicsRestitution": 0.1,
+  "physicsLinearDamping": 0.1,
+  "physicsAngularDamping": 0.1,
+  "physicsFriction": 0.2,
+  "physicsStartAwake": true,
+  "physicsKinematic": false,
+  "physicsShapePoints": [],
+  "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"parent":{"name":"obj_present","path":"objects/obj_present/obj_present.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+  ],
+  "properties": [],
+  "overriddenProperties": [],
+  "parent": {
+    "name": "Collisions",
+    "path": "folders/Objects/Collisions.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "obj_present",
+  "tags": [],
+  "resourceType": "GMObject",
+}
