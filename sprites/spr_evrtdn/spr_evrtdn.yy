@@ -149,7 +149,7 @@
   ],
   "parent": {
     "name": "Older",
-    "path": "folders/Fonts/Sprites/Characters/Everett/Older.yy",
+    "path": "folders/Sprites/Characters/Everett/Older.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_evrtdn",

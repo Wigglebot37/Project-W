@@ -97,7 +97,7 @@
   ],
   "parent": {
     "name": "Pause Menu",
-    "path": "folders/Fonts/Sprites/Pause Menu.yy",
+    "path": "folders/Sprites/Pause Menu.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_options",

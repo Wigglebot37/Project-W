@@ -69,7 +69,7 @@
   ],
   "parent": {
     "name": "Houses",
-    "path": "folders/Fonts/Sprites/Tilesets/Houses.yy",
+    "path": "folders/Sprites/Tilesets/Houses.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_ev_room",

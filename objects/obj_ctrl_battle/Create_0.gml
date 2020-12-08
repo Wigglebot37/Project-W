@@ -23,9 +23,36 @@ spawnX=0; spawnY=0;
 spawnRoom=noone;
 enemy=noone;
 numselect=1;
-gridflipval=0;
-gridflip=false;
-swap_val=0;
 grid_wid=sprite_get_width(spr_grid_col);
 randomize();
 ran=round(random_range(1,112));
+fliparray=array_create(112,8);
+fliptrue=array_create(112,0);
+swaparray=array_create(112,0);
+flipping=array_create(112,0);
+flipdir=array_create(112,dir_up);
+for(var i=0; i<16; i++) {
+	for(var j=0; j<7; j++) {
+		flip2D[i,j]=0;
+	}
+}
+for(var i=0; i<16; i++) {
+	for(var j=0; j<7; j++) {
+		colarray[i,j]=0;
+	}
+}
+for(var i=0; i<16; i++) {
+	for(var j=0; j<7; j++) {
+		viable[i,j]=1;
+	}
+}
+flipstart=true;
+var ix=0,iy=0,num=0;
+repeat(112) {
+	num++;
+	flip2D[ix,iy]=num;
+	ix++;
+	if(ix>15) { ix=0; iy++; }
+}
+attack_sprite=spr_exattack;
+sprite_change=true;

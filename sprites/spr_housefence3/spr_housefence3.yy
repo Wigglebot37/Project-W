@@ -69,7 +69,7 @@
   ],
   "parent": {
     "name": "Tilesets",
-    "path": "folders/Fonts/Sprites/Tilesets.yy",
+    "path": "folders/Sprites/Tilesets.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_housefence3",

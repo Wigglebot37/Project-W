@@ -69,7 +69,7 @@
   ],
   "parent": {
     "name": "Cacti",
-    "path": "folders/Fonts/Sprites/Cacti.yy",
+    "path": "folders/Sprites/Cacti.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_barcactussnd",

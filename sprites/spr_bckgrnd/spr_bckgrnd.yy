@@ -69,7 +69,7 @@
   ],
   "parent": {
     "name": "Start Menu",
-    "path": "folders/Fonts/Sprites/Start Menu.yy",
+    "path": "folders/Sprites/Start Menu.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_bckgrnd",

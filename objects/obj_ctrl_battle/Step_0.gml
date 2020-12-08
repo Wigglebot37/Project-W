@@ -16,7 +16,7 @@ if(room==rm_battlescreen) {
 	dir=-1;
 	if(delay>0) delay-=delaytotal;
 	else delay=0;
-	if(fade2>0) fade2-=0.01;
+	if(fade2>0 && !flipstart) fade2-=0.01;
 	var hinput=(input_right-input_left);
 	var vinput=(input_down-input_up);
 	
@@ -40,6 +40,7 @@ if(room==rm_battlescreen) {
 		noinput=true;
 	}
 	
+	#region //Inputs
 	if(dir==dir_left) {
 		if(noinput) {
 			alarm_dir=dir;
@@ -113,16 +114,5 @@ if(room==rm_battlescreen) {
 		delay=1;
 		noinput=false;
 	}
-}
-if(keyboard_check_pressed(vk_shift) && gridflipval==0) gridflip=true;
-
-if(gridflip) {
-	if(gridflipval<6) gridflipval+=0.25;
-	else {
-		gridflip=false; 
-		if(grid_wid-1>swap_val) swap_val+=1;
-		else swap_val=0;
-	}
-} else {
-	if(gridflipval>0) gridflipval-=0.25;
+	#endregion
 }

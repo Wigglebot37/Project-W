@@ -81,7 +81,7 @@
   ],
   "parent": {
     "name": "Animals",
-    "path": "folders/Fonts/Sprites/Animals.yy",
+    "path": "folders/Sprites/Animals.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_crabdance2",

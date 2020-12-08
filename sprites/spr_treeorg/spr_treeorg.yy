@@ -69,7 +69,7 @@
   ],
   "parent": {
     "name": "Trees",
-    "path": "folders/Fonts/Sprites/Trees.yy",
+    "path": "folders/Sprites/Trees.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_treeorg",

@@ -69,7 +69,7 @@
   ],
   "parent": {
     "name": "Characters",
-    "path": "folders/Fonts/Sprites/Characters.yy",
+    "path": "folders/Sprites/Characters.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_evdn2",

@@ -81,7 +81,7 @@
   ],
   "parent": {
     "name": "Magic Travel",
-    "path": "folders/Fonts/Sprites/Characters/Magic Travel.yy",
+    "path": "folders/Sprites/Characters/Magic Travel.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_trplayer",

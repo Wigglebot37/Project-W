@@ -1,18 +1,18 @@
-///@function cutscene_move_character(obj,xx,yy,relative,new_spd);
+///@function cutscene_move_character(obj,xi,yi,relative,new_spd);
 ///@param Obj_Inst
 ///@param x
 ///@param y
 ///@param Relative
 ///@param Speed
 
-function cutscene_move_character(obj,xx,yy,relative,new_spd) {
+function cutscene_move_character(obj,xi,yi,relative,new_spd) {
 	if(x_dest==-1) {
 		if(!relative) {
-			x_dest=argument1;
-			y_dest=argument2;
+			x_dest=xi;
+			y_dest=yi;
 		} else {
-			x_dest=obj.x+argument1;
-			y_dest=obj.y+argument2;
+			x_dest=obj.x+xi;
+			y_dest=obj.y+yi;
 		}
 	}
 
@@ -29,13 +29,13 @@ function cutscene_move_character(obj,xx,yy,relative,new_spd) {
 	dir_upleft=135;
 	*/
 
-	var xx=x_dest, yy=y_dest;
+	xi=x_dest; yi=y_dest;
 
 	with(obj) {
-		if(point_distance(x,y,xx,yy)>new_spd) {
-			if(x<xx+1 && x>xx-1) x=xx;
-			if(y<yy+1 && y>yy-1) y=yy;
-			var new_dir=point_direction(x,y,xx,yy);
+		if(point_distance(x,y,xi,yi)>new_spd) {
+			if(x<xi+1 && x>xi-1) x=xi;
+			if(y<yi+1 && y>yi-1) y=yi;
+			var new_dir=point_direction(x,y,xi,yi);
 			spd=new_spd;
 		
 			if(new_dir==90) dir=dir_up;
@@ -47,8 +47,8 @@ function cutscene_move_character(obj,xx,yy,relative,new_spd) {
 			else if(new_dir<360 && new_dir>270) dir=dir_downright;
 			else if(new_dir>180 && new_dir<270) dir=dir_downleft;
 		} else {
-			x=xx;
-			y=yy;
+			x=xi;
+			y=yi;
 			spd=0;
 			with(other) {
 				x_dest=-1;

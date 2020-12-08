@@ -69,7 +69,7 @@
   ],
   "parent": {
     "name": "Younger",
-    "path": "folders/Fonts/Sprites/Characters/Everett/Younger.yy",
+    "path": "folders/Sprites/Characters/Everett/Younger.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_yevrtup",

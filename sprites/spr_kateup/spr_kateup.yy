@@ -69,7 +69,7 @@
   ],
   "parent": {
     "name": "Older",
-    "path": "folders/Fonts/Sprites/Characters/Kate/Older.yy",
+    "path": "folders/Sprites/Characters/Kate/Older.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_kateup",

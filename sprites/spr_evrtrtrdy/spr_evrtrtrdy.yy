@@ -69,7 +69,7 @@
   ],
   "parent": {
     "name": "Ready",
-    "path": "folders/Fonts/Sprites/Characters/Magic Travel/Everett/Ready.yy",
+    "path": "folders/Sprites/Characters/Magic Travel/Everett/Ready.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_evrtrtrdy",
