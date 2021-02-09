@@ -1,6 +1,6 @@
 var gwidth=game_width;
 
-if(input_pause && obj_everett.active_textbox==noone && !pause && !obj_game.transitionbool && !instance_exists(obj_cutscene)) {
+if(input_pause && obj_player.active_textbox==noone && !pause && !obj_game.transitionbool && !instance_exists(obj_cutscene)) {
 	pause=true; start_pause=true; alpha=0; alphatext=0; alpha2=0; audio_pause_all();
 }
 

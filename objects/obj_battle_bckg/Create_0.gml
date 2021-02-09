@@ -15,6 +15,6 @@ sourcey = 0;
 effect = 0;             // 0: Sine, 1: VerComp, 2: HorComp (incomplete) 3: Sine+VerComp
 scanline = 0;           // Scanline effect. 0: None, 1: Draw even lines, 2: Draw odd lines
 image_speed = 0.1;      // Animation speed
-surf = surface_create(view_width,view_height); // Background surface
+surf = surface_create(view_width,view_height+76); // Background surface
 
 current_pal=0;

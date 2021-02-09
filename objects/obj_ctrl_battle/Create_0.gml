@@ -1,4 +1,5 @@
 start_battle=false;
+end_battle=false;
 
 //Call this once in your object before using the shader script
 col1 = make_color_rgb(0.8*255,0,0);
@@ -26,7 +27,7 @@ numselect=1;
 grid_wid=sprite_get_width(spr_grid_col);
 randomize();
 ran=round(random_range(1,112));
-fliparray=array_create(112,8);
+fliparray=array_create(112,5);
 fliptrue=array_create(112,0);
 swaparray=array_create(112,0);
 flipping=array_create(112,0);

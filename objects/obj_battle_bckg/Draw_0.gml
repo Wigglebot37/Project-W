@@ -1,13 +1,15 @@
 if(alpha>0) { //Don't even bother drawing this if the background is invisible anyway
+	var cury=camera_get_view_y(view);
     surface_set_target(surf);
 	//pal_swap_set(spr_battle_bckg_1_pal,current_pal,true);
-    draw_sprite_tiled_area(back,image_index,tr_offsetx,tr_offsety,0,0,view_width,view_height);
+    draw_sprite_tiled_area(back,image_index,tr_offsetx,tr_offsety,0,0,view_width,view_height+76);
     surface_reset_target();
 
-    var phase,step,fstep,istep,offx,gheight=obj_display_manager.ideal_height,gwidth=obj_display_manager.ideal_width;
+    var phase,step,fstep,istep,offx,gheight=ideal_height,gwidth=ideal_width;
     fstep = (scanline == 2);
     istep = 1 + (scanline > 0);
     if surface_exists(surf) { //Always make sure the surface is around
+		offsety=cury;
         for (var step=fstep; step<gwidth; step+=istep) {
             phase = sin(frequency*(step+phaseoffset)/gheight);
             if(effect==0) {
@@ -26,7 +28,7 @@ if(alpha>0) { //Don't even bother drawing this if the background is invisible an
                 //Horz. Comp (incomplete, weird effect)
                 part=gwidth-sourcex-8;
                 sourcex=step+sin(phase)*amplitude+100;
-                sourcey=0
+                sourcey=0+offsety;
                 draw_surface_part_ext(surf,sourcex,sourcey,gwidth,1,0,step,1,1,c_white,alpha);
             } else if(effect==3) {
                 //Sine + Vert. Comp (needs extra width)

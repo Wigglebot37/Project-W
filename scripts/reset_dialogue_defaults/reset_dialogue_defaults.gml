@@ -1,7 +1,7 @@
 ///@function reset_dialogue_defaults();
 
 function reset_dialogue_defaults() {
-	obj_everett.active_textbox=noone;
+	active_textbox=noone;
 	myText				= -1;
 	mySpeaker			= -1;
 	myEffects			= 0;

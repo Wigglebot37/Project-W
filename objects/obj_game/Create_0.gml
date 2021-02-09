@@ -43,8 +43,6 @@ spawnY=0;
 pfA=0;
 transition_sound=snd_select;
 
-ev=obj_everett;
-
 runbool=false;
 
 globalvar transinst;
@@ -77,6 +75,13 @@ enum txtfx {
 	pulse=6,
 	flicker=7
 }
+
+// Party
+globalvar p1,p2,p3,p4;
+p1=obj_everett;
+p2=noone;
+p3=noone;
+p4=noone;
 
 // Button Maps
 globalvar key_revert,key_interact,key_up,key_left,key_down,key_right,key_pause,key_enter;

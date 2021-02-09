@@ -39,8 +39,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Characters",
-    "path": "folders/Objects/Characters.yy",
+    "name": "NPCs",
+    "path": "folders/Objects/Characters/NPCs.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_kate",

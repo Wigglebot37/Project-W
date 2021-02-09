@@ -1,15 +1,9 @@
 {
-  "spriteId": {
-    "name": "spr_evrtdn",
-    "path": "sprites/spr_evrtdn/spr_evrtdn.yy",
-  },
+  "spriteId": null,
   "solid": false,
-  "visible": true,
-  "spriteMaskId": {
-    "name": "spr_shadow",
-    "path": "sprites/spr_shadow/spr_shadow.yy",
-  },
-  "persistent": false,
+  "visible": false,
+  "spriteMaskId": null,
+  "persistent": true,
   "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
@@ -25,10 +19,6 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"obj_everett","path":"objects/obj_everett/obj_everett.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"obj_everett","path":"objects/obj_everett/obj_everett.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":2,"eventType":3,"collisionObjectId":null,"parent":{"name":"obj_everett","path":"objects/obj_everett/obj_everett.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"parent":{"name":"obj_everett","path":"objects/obj_everett/obj_everett.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":32,"eventType":9,"collisionObjectId":null,"parent":{"name":"obj_everett","path":"objects/obj_everett/obj_everett.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],

@@ -5,6 +5,17 @@ myPitch				= 1;
 myFont				= FONT_NORM;
 myName				= "Everett";
 
+// Player Additions
+sp_dn=spr_evrtdn; sp_dnrn1=spr_evrtdnrdy; sp_dnrn2=spr_evrtdnrdy2;
+sp_up=spr_evrtup; sp_uprn1=spr_evrtuprdy; sp_uprn2=spr_evrtuprdy2;
+sp_rt=spr_evrtrt; sp_rtrn1=spr_evrtrtrdy; sp_rtrn2=spr_evrtrtrdy2;
+sp_lt=spr_evrtlt; sp_ltrn1=spr_evrtltrdy; sp_ltrn2=spr_evrtltrdy2;
+sp_dnrt=spr_evrtdnrt; sp_dnrtrn1=spr_evrtdnrtrdy; sp_dnrtrn2=spr_evrtdnrtrdy2;
+sp_uprt=spr_evrtuprt; sp_uprtrn1=spr_evrtuprtrdy; sp_uprtrn2=spr_evrtuprtrdy2;
+sp_dnlt=spr_evrtdnlt; sp_dnltrn1=spr_evrtdnltrdy; sp_dnltrn2=spr_evrtdnltrdy2;
+sp_uplt=spr_evrtuplt; sp_upltrn1=spr_evrtupltrdy; sp_upltrn2=spr_evrtupltrdy2;
+// (New Code) ^^
+
 invincible=false;
 invc_ctdn=3;
 ev_alpha=1;
@@ -21,30 +32,8 @@ prepress=false;
 
 img_spd=8;
 idleadd=0;
-randombool=false;
-randomnum=-1;
-diagfacing=false;
-diagtouch=false;
-diagtouchprev=false;
-x1=x;
-y1=y;
-x2=x;
-y2=y;
 flash=0;
 
 enddir=-1;
-dir=dir_down;
 
-global.ev=self;
-audio_play_sound(snd_beach,100,true);
-audio_sound_gain(snd_beach,0,0);
-maxdist=300;
-
-tran=obj_transition;
 active_textbox=noone;
-
-zswitch=false;
-zspeed=2;
-zgrav=0;
-z=0;
-depth=-y;

@@ -12,6 +12,10 @@ if(fade==1 && !fadetrigger) {
 	fadetrigger=true;
 }
 
+if(keyboard_check(ord("I"))) obj_battlecam.y-=2;
+else if(keyboard_check(ord("K"))) obj_battlecam.y+=2;
+if(room==rm_battlescreen && !end_battle && keyboard_check_pressed(vk_backspace)) end_battle=true;
+
 if(room==rm_battlescreen) {
 	dir=-1;
 	if(delay>0) delay-=delaytotal;

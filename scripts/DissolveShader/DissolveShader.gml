@@ -4,9 +4,11 @@
 /// @param x X value
 /// @param y Y value
 /// @param {real} Remains From 0 (fully transparent) to 1 (fully revealed)
+/// @param scx xScale
+/// @param scy yScale
 /// @description Utilizes the dissolve shader.
 
-function DissolveShader(_spr,_frame,_x,_y,_remain) {
+function DissolveShader(_spr,_frame,_x,_y,_remain,_scalex,_scaley) {
 	//Call DissolveSettings at least once in the object before using this.
 
 	//If you have a fixed sprite you could possibly move this to DissolveSettings for a minor speed boost
@@ -21,7 +23,8 @@ function DissolveShader(_spr,_frame,_x,_y,_remain) {
 	shader_set_uniform_f(_u_DissolveC2,_DissolveC2[0],_DissolveC2[1],_DissolveC2[2]);
 	texture_set_stage(_u_DissolveTex,_DissolveTex);
 
-	draw_sprite(_spr,_frame,_x,_y);
+	//draw_sprite(_spr,_frame,_x,_y);
+	draw_sprite_ext(_spr,_frame,_x,_y,_scalex,_scaley,0,c_white,1);
 	//If you need to scale & rotate etc you can use draw_sprite_ext() above instead.
 	//You must then add each argument to the script as necessary or insert a default value.
 	//Example:

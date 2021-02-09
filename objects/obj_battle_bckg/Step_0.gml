@@ -7,4 +7,4 @@ tr_offsety += speedy;
 //if(current_pal>=pal_swap_get_pal_count(spr_battle_bckg_1_pal)-1) current_pal=0;
 
 //Draw tiled sprite to the background surface
-if(!surface_exists(surf)) surf=surface_create(view_width,view_height);
+if(!surface_exists(surf)) surf=surface_create(view_width,view_height+76);

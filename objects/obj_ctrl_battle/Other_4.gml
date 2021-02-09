@@ -1,6 +1,3 @@
-room_set_width(rm_battlescreen,view_width);
-room_set_height(rm_battlescreen,view_height);
-
 if(room==rm_battlescreen) {
 	background1=instance_create_layer(0,0,"Instances",obj_battle_bckg);
 	with(background1) {
@@ -16,11 +13,11 @@ if(room==rm_battlescreen) {
 	phaseoffset = 0;        // Increased by phaserate every step to create wave movement 
 	phaserate = 1;          // Speed of wave movement
 	frequency = 50;         // Density of waves
-	amplitude = 5;         // Intensity of waves
-	offsetx = 0;          // Horizontal offset
-	offsety = 0;           // Vertical offset
-	speedx = 0;           // Horizontal speed
-	speedy = 0;          // Vertical speed
+	amplitude = 5;          // Intensity of waves
+	offsetx = 0;            // Horizontal offset
+	offsety = 0;            // Vertical offset
+	speedx = 0;             // Horizontal speed
+	speedy = 0;             // Vertical speed
 	tr_offsetx = 0;         // Increased by speedx every step to create translation
 	tr_offsety = 0;         // Increased by speedy every step to create translation
 	sourcex = 0;

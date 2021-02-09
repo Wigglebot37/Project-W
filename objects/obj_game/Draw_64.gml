@@ -13,16 +13,16 @@ if(transitionbool) {
 		if(enemy==noone) {
 			blackA+=0.05;
 			if(blackA>=1) {
-				if(room!=rm_battlescreen && instance_exists(ev)) {
-					if(ev.running) runbool=true;
+				if(room!=rm_battlescreen && instance_exists(obj_player)) {
+					if(obj_player.running) runbool=true;
 					else runbool=false;
 					audio_play_sound(transition_sound,50,false);
-					img_spd=ev.img_spd;
+					img_spd=obj_player.img_spd;
 				} room_goto(spawnRoom);
 			}
 		} else {
-			if(ev.flash<=0.1 && flashct<2) {
-				ev.flash=1; flashct++;
+			if(obj_player.flash<=0.1 && flashct<2) {
+				obj_player.flash=1; flashct++;
 			}
 			if(trany1<game_height) trany1+=4*scalar;
 			else {
@@ -32,18 +32,18 @@ if(transitionbool) {
 	} else {
 		if(enemy==noone) {
 			if(end_battle) { 
-				ev.invincible=true; end_battle=false; 
+				obj_player.invincible=true; end_battle=false; 
 				if(win) {
 					instance_destroy(stored_inst); win=false;
 				}
 			}
-			ev.dir=pfA;
-			if(runbool) ev.running=true;
-			else ev.running=false;
+			obj_player.dir=pfA;
+			if(runbool) obj_player.running=true;
+			else obj_player.running=false;
 			blackA-=0.05;
 			if(blackA<=0) {
 				blackA=0;
-				ev.img_spd=img_spd;
+				obj_player.img_spd=img_spd;
 				end_tran=true;
 				transitionbool=false;
 			}

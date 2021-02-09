@@ -1,6 +1,6 @@
 ///@description Spawn point
 if(spawnRoom==-1) exit;
-if(spawnRoom!=rm_battlescreen && object_exists(ev)) {
-	ev.x=spawnX;
-	ev.y=spawnY;
+if(spawnRoom!=rm_battlescreen && object_exists(obj_player)) {
+	obj_player.x=spawnX;
+	obj_player.y=spawnY;
 }

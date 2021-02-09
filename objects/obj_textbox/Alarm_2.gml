@@ -18,7 +18,7 @@ if(is_array(cv)){
 if(page+1 < array_length(text)){
 	var nl = nextline[page];
 	switch(nl[choice]){
-		case -1: obj_everett.active_textbox=noone;
+		case -1: obj_player.active_textbox=noone;
 			instance_destroy();	exit;
 		case  0: page += 1;				break;
 		default: page = nl[choice];
@@ -26,7 +26,7 @@ if(page+1 < array_length(text)){
 	//Performs Setup
 	event_perform(ev_alarm, 1);
 } else {
-	obj_everett.active_textbox=noone;
+	obj_player.active_textbox=noone;
 	instance_destroy();	
 }
 

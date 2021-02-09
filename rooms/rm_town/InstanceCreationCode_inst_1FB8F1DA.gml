@@ -1,9 +1,9 @@
 event_inherited();
 
 t_scene_info=[
-	[cutscene_move_character,obj_everett,575,864,false,1],
+	[cutscene_move_character,obj_player,575,864,false,1],
 	[cutscene_play_sound,snd_dooropen,50,false],
-	[cutscene_instance_destroy,obj_everett],
+	[cutscene_instance_destroy,obj_player],
 	[cutscene_wait,1],
 	[cutscene_room_transition,rm_underground,144,704,dir_up],
 ];

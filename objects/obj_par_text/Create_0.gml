@@ -8,5 +8,4 @@ myName			= "Noone";
 //-----------Defaults Setup (LEAVE THIS STUFF)
 reset_dialogue_defaults();
 
-ev=global.ev;
 depth=-y;

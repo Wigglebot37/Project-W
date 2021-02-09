@@ -7,7 +7,7 @@ if(stop_dialogue) {
 	if(yy<game_height) yy+=6*sc;
 	else {
 		// Destroying this textbox instance and allow player movement
-		obj_everett.active_textbox=noone;
+		obj_player.active_textbox=noone;
 		stop_dialogue=false;
 		instance_destroy();
 		exit;
