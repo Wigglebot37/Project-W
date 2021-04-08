@@ -2,7 +2,8 @@ if(!show_inventory) exit;
 var ii=0,ix=0,iy=0,sx,sy,iitem,inv_grid=ds_inventory,sc=scalar,
 	gwidth=game_width,gheight=game_height,xval=gheight*1/5;
 
-create_nineslice(spr_boxlgback,Flavor,xval,0,gwidth,gheight*4/5);
+
+create_nineslice(spr_boxlgback,Flavor,xval,0,gwidth-xval,gheight*4/5);
 create_nineslice(spr_boxlgback,Flavor,0,gheight*4/5,gwidth,gheight);
 
 draw_sprite_ext(spr_border,0,0,0,2*sc,2*sc,0,c_white,1);

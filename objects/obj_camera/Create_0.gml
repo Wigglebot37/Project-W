@@ -1,11 +1,12 @@
 /// @description Sets it up
 #macro view view_camera[0]
-globalvar view_width,view_height,display_w,display_h,scalar,ideal_width,ideal_height;
+globalvar view_width,view_height,display_w,display_h,scalar,ideal_width,ideal_height,fullswitch;
 view_width=1920/6;
 view_height=1080/6;
 display_w=display_get_width();
 display_h=display_get_height();
 scalar=1;
+fullswitch=true;
 
 window_scale=2;
 ideal_width=view_width*window_scale;

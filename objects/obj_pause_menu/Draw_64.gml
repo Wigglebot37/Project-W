@@ -19,10 +19,11 @@ var c=c_black;
 draw_rectangle_color(xx,0,gwidth,gheight,c,c,c,c,false);
 
 if(page==0) {
+	//show_debug_message();
 	create_nineslice(spr_boxlgmenu,Flavor,0,0,x2,gheight/4);
-	create_nineslice(spr_boxlgmenu,Flavor,0,gheight/4,x2,(gheight/4)*2);
-	create_nineslice(spr_boxlgmenu,Flavor,0,(gheight/4)*2,x2,(gheight/4)*3);
-	create_nineslice(spr_boxlgmenu,Flavor,0,(gheight/4)*3,x2,gheight);
+	create_nineslice(spr_boxlgmenu,Flavor,0,gheight/4,x2,gheight*2/4);
+	create_nineslice(spr_boxlgmenu,Flavor,0,gheight*2/4,x2,gheight*3/4);
+	create_nineslice(spr_boxlgmenu,Flavor,0,gheight*3/4,x2,gheight);
 } else if(page!=menu_page.Inventory && page!=menu_page.Skills) {
 	create_nineslice(spr_boxlgback,Flavor,0,0,gwidth,gheight*4/5);
 	create_nineslice(spr_boxlgback,Flavor,0,gheight*4/5,gwidth,gheight);

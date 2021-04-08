@@ -20,8 +20,7 @@ var tp=text[page],text_array_len=array_length(tp);
 if(yy==boxstart) {
 	#region //Draw namebox and name
 	if(name[page]!="Noone") {
-		create_nineslice(spr_boxlg,Flavor,4*sc,namestart+(2*sc),(gwidth/4)+4*sc,boxstart+(8*sc));
-		
+		create_nineslice(spr_boxlg,Flavor,4*sc,namestart+(2*sc),(gwidth/4)+4*sc,boxstart+(2*sc));
 		// Draw character name that is talking
 		var namey=4;
 		draw_set_halign(fa_center);

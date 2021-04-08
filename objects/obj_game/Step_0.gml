@@ -1,6 +1,6 @@
 /// @description Gui/Global dimensions
 if(keyboard_check_pressed(vk_f4)) {
-	window_set_fullscreen(!window_get_fullscreen());
+	change_window_mode();
 }
 
 if(keyboard_check_pressed(ord("R"))) game_restart();
