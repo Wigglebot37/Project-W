@@ -4,6 +4,7 @@ if(room==rm_battlescreen && enemy!=noone && instance_number(enemy)<1) {
 }
 
 draw_text_transformed(160*scalar,20*scalar,"pitch: "+string(glopitch),2*scalar,2*scalar,0);
+draw_text_transformed(160*scalar,50*scalar,"FPS: "+string(round(fps)),2*scalar,2*scalar,0);
 
 var c=c_black;
 //Screen Transitioning

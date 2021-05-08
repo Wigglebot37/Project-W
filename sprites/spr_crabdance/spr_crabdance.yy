@@ -79,6 +79,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"f4ef4b88-3593-479d-b3db-2c55bcaa049e","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Animals",
     "path": "folders/Sprites/Animals.yy",

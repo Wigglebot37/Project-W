@@ -16,6 +16,7 @@ sp_dnlt=spr_evrtdnlt; sp_dnltrn1=spr_evrtdnltrdy; sp_dnltrn2=spr_evrtdnltrdy2;
 sp_uplt=spr_evrtuplt; sp_upltrn1=spr_evrtupltrdy; sp_upltrn2=spr_evrtupltrdy2;
 // (New Code) ^^
 
+fighter=obj_packbot;
 invincible=false;
 invc_ctdn=3;
 ev_alpha=1;

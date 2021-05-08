@@ -5,7 +5,8 @@ view_width=1920/6;
 view_height=1080/6;
 display_w=display_get_width();
 display_h=display_get_height();
-scalar=1;
+if(window_get_fullscreen()) scalar=3;
+else scalar=1;
 fullswitch=true;
 
 window_scale=2;

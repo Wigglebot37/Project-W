@@ -16,6 +16,9 @@ sp_uplt=p1.sp_uplt; sp_upltrn1=p1.sp_upltrn1; sp_upltrn2=p1.sp_upltrn2;
 
 sprite_index=sp_dn;
 
+playerflip=false;
+followers=true;
+fighter=p1.fighter;
 invincible=false;
 invc_ctdn=3;
 ev_alpha=1;
@@ -50,6 +53,12 @@ dir=dir_down;
 //audio_sound_gain(snd_beach,0,0);
 //maxdist=300;
 
+for(var c = 0;c <= 100;c++){
+    prevx[c] = x;
+    prevy[c] = y;
+    prevd[c] = direction;
+}
+
 tran=obj_transition;
 active_textbox=noone;
 
@@ -58,3 +67,4 @@ zspeed=2;
 zgrav=0;
 z=0;
 depth=-y;
+pl_count=3;

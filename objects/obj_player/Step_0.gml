@@ -2,6 +2,7 @@
 //if(keyboard_check_pressed(vk_space)) flash=1;
 //var beachdist=distance_to_object(instance_nearest(x,y,obj_wall_beach));
 //if(beachdist<maxdist) audio_sound_gain(snd_beach,(maxdist-beachdist)/maxdist,0);
+followers=true;
 
 if(obj_pause_menu.end_pause || obj_game.end_tran) { image_speed=img_spd; obj_pause_menu.end_pause=false; obj_game.end_tran=false;
 	if(!running && ready2==1) {running=true; ready=false; ready2=0;} else {ready=false; ready2=0;} }
@@ -98,7 +99,7 @@ if(!instance_exists(obj_cutscene) && !obj_game.transitionbool && active_textbox=
 		} else if(diagtouch) diagtouch=false;
 	} //Ends transitionbool statement
 	#endregion
-}
+} else followers=false;
 #region //Room transition collision check
 var inst=instance_place(x, y, tran);
 if (inst!=noone) {
@@ -111,6 +112,7 @@ if (inst!=noone) {
 	} else if(inst.pfB1==dir_down) {
 		inst.pfB2=dir_downleft; inst.pfB3=dir_downright;
 	} if(dir==inst.pfB1 || dir==inst.pfB2 || dir==inst.pfB3) {
+		followers=false;
 		spd=0;
 		img_spd=image_speed;
 		image_index=1;
@@ -211,6 +213,7 @@ if(!instance_exists(obj_cutscene)) {
 		running=false;
 		ready=false;
 		ready2=0;
+		followers=false;
 	}
 }
 #region //Sprite Changes
@@ -311,6 +314,20 @@ if(inst!=noone && !invincible) {
 			enemy=inst.object_index;
 			start_battle=true;
 		}
+	}
+}
+if(keyboard_check_pressed(vk_space)) playerflip=!playerflip;
+if(room==rm_battlescreen) {
+	var o=163;
+	dir=dir_up;
+	obj_party.dir=dir_up;
+	if(!playerflip) {
+		o=0; dir=dir_down; obj_party.dir=dir_down;
+	}
+	y=o+52*3/4; x=320/(pl_count+1);
+	with(obj_party) {
+		y=o+(52*3/4);
+		x=(320/(pl_count+1))*(player_index+1);
 	}
 }
 #endregion

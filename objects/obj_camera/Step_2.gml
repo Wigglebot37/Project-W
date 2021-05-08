@@ -26,8 +26,8 @@ if(instance_exists(cam_follow)) {
 		yTo=floor(cam_follow.y-16);
 	}
 	
-	var _x=clamp(_curx-view_width/2,0,room_width-view_width);
-	var _y=clamp(_cury-view_height/2,0,room_height-view_height);
+	var _x=clamp(_curx-ideal_width/view_zoom/2,0,room_width-view_width);
+	var _y=clamp(_cury-ideal_height/view_zoom/2,0,room_height-view_height);
 	
-	camera_set_view_pos(view,_x+view_zoom,_y);
+	camera_set_view_pos(view,_x,_y);
 }

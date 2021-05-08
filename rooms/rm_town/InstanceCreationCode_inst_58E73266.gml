@@ -4,7 +4,7 @@ t_scene_info=[
 	[cutscene_instance_destroy,obj_player],
 	[cutscene_wait,1],
 	[cutscene_play_sound,snd_doorshut,50,false],
-	[cutscene_instance_create,598,218,"Objects",obj_player],
+	[cutscene_instance_create,598,218,"Characters",obj_player],
 	[cutscene_wait,.5],
 	[cutscene_move_character,obj_player,+16,0,true,1],
 ];

@@ -7,7 +7,7 @@ function change_window_mode() {
 		window_set_fullscreen(!win);
 		if(!win) scalar=3;
 		else scalar=1;
-		obj_camera.alarm[1]=1;
+		obj_camera.alarm[1]=2;
 		fullswitch=false;
 	}
 }

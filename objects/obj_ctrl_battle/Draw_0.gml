@@ -15,7 +15,7 @@ if(room==rm_battlescreen) {
 	}
 	var spr=attack_sprite, xo=sprite_get_xoffset(spr),yo=sprite_get_yoffset(spr),col=0,
 		wid=sprite_get_width(spr),hgt=sprite_get_height(spr),xx=0,yy=0,maxindex=4;
-	var ix=0,iy=0,num=0,numx=0,numy=0,ranx=0,rany=0,flipspd=0.5;
+	var ix=0,iy=0,num=0,numx=0,numy=0,flipspd=0.5;
 	if(sprite_change) {
 		object_set_sprite(obj_attrange,attack_sprite);
 		var inst=instance_create_depth(xo,yo,0,obj_attrange);
@@ -88,7 +88,8 @@ if(room==rm_battlescreen) {
 		pal_swap_reset();
 		
 		if(num==numselect) { numx=battlex; numy=battley; }
-		if(num==ran) { ranx=battlex; rany=battley; }
+		if(num==ran) { fighter1.x=battlex; fighter1.y=battley; }
+		if(num==ran2) { enemy1.x=battlex; enemy1.y=battley; }
 		//if(viable[ix,iy]==0) draw_sprite(spr_battlesel,image_index,battlex,battley);
 		ix++;
 		if(ix>15) { ix=0; iy++; }
@@ -99,7 +100,6 @@ if(room==rm_battlescreen) {
 	}
 	image_speed=0.08;
 	draw_sprite(spr_battlesel,image_index,numx,numy);
-	draw_sprite(spr_packbot,image_index,ranx,rany);
 	
 	// Helps measure pixels
 	//var yii=0;
