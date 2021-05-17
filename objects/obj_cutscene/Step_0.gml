@@ -1,4 +1,4 @@
-script_execute_alt(current_scene[0],current_scene_array);
+if(!cutscene_end) script_execute_alt(current_scene[0],current_scene_array);
 
 if(!cutscene_end && yy<40*scalar) yy+=4*scalar;
 else if(cutscene_end && yy>0) yy-=4*scalar;

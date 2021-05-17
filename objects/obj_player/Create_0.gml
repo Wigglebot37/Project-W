@@ -16,6 +16,10 @@ sp_uplt=p1.sp_uplt; sp_upltrn1=p1.sp_upltrn1; sp_upltrn2=p1.sp_upltrn2;
 
 sprite_index=sp_dn;
 
+player_index=0;
+x_dest=-1;
+y_dest=-1;
+old_count=pl_count;
 playerflip=false;
 followers=true;
 fighter=p1.fighter;
@@ -26,9 +30,9 @@ empty=false;
 running=false;
 ready=false;
 ready2=0;
-spd=0;
 walk_spd=1;
 run_spd=2;
+spd=walk_spd;
 hinput=0;
 vinput=0;
 prepress=false;
@@ -53,7 +57,7 @@ dir=dir_down;
 //audio_sound_gain(snd_beach,0,0);
 //maxdist=300;
 
-for(var c = 0;c <= 100;c++){
+for(var c=0; c<=70; c++){
     prevx[c] = x;
     prevy[c] = y;
     prevd[c] = direction;

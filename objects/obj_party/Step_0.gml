@@ -1,7 +1,12 @@
 /// @description Spritework
-running=obj_player.running;
-ready2=obj_player.ready2;
-ready=obj_player.ready;
+if(instance_exists(obj_player)) {
+	running=obj_player.running;
+	ready2=obj_player.ready2;
+	ready=obj_player.ready;
+	hinput=obj_player.hinput;
+	vinput=obj_player.vinput;
+	spd=obj_player.spd;
+}
 #region //Sprite Changes
 if(running) sprite_index=spr_trplayer;
 else {
@@ -55,4 +60,11 @@ if(!running) {
 
 depth=-y;
 direction=dir;
-if(!running && obj_player.speed==0 && !ready) image_index=1;
+speed=spd;
+if(!running && !ready) {
+	if(instance_exists(obj_player)) 
+		if(obj_player.speed==0 && !instance_exists(obj_cutscene)) {
+			speed=0; image_index=1;
+		}
+}
+if((!running && hinput==0 && vinput==0 && spd==0) || room==rm_battlescreen) { image_index=1; image_speed=0; } 

@@ -1,16 +1,31 @@
-/// @description Make allies that follow
-if(room!=rm_battlescreen) {
-	for(var c=0; c<=70; c++) {
-	    prevx[c]=x;
-	    prevy[c]=y;
-	    prevd[c]=direction;
+/// @description Updates player count
+if(old_count==pl_count) return;
+else if(old_count>pl_count) {
+	for(var c=old_count; c>pl_count; c--) {
+		var partyCharacter=noone;
+		old_count=pl_count;
+		switch(c) {
+			case 4: partyCharacter=partyinst4; partyinst4=noone; break;
+			case 3: partyCharacter=partyinst3; partyinst3=noone; break;
+			case 2: partyCharacter=partyinst2; partyinst2=noone; break;
+		}
+		instance_destroy(partyCharacter);
 	}
-}
-
-if(!instance_exists(obj_party)) {
-	for(c=1; c<pl_count; c++) {
+	with(obj_trigger_perm) {
+		if(battle) {
+			if(!battleadded) {
+				array_push(t_scene_info,[battle_setup,id]);
+				battleadded=true;
+			} else {
+				t_scene_info[array_length(t_scene_info)-1]=[battle_setup,id];
+			}
+		}
+	}
+} else if(old_count<pl_count) {
+	for(var c=old_count; c<pl_count; c++) {
 		var partyCharacter=instance_create_layer(x,y,"Characters",obj_party);
 		partyCharacter.player_index=c;
+		old_count=pl_count;
 		with(partyCharacter) {
 			x=obj_player.prevx[0]; y=obj_player.prevy[0];
 			var i=noone;

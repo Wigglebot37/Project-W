@@ -12,7 +12,8 @@ function load_game() {
 		
 		while(array_length(_loadData)>0) {
 			var _loadEntity=array_pop(_loadData);
-			with(instance_create_layer(0,0,layer,asset_get_index(_loadEntity.obj))) {
+			playerinst=instance_create_layer(0,0,layer,asset_get_index(_loadEntity.obj))
+			with(playerinst) {
 				x=_loadEntity.x;
 				y=_loadEntity.y;
 			}

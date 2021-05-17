@@ -17,6 +17,9 @@ sp_uplt=p1.sp_uplt; sp_upltrn1=p1.sp_upltrn1; sp_upltrn2=p1.sp_upltrn2;
 sprite_index=sp_dn;
 player_index=0;
 
+spd=1;
+x_dest=-1;
+y_dest=-1;
 fighter=p1.fighter;
 invincible=false;
 invc_ctdn=3;

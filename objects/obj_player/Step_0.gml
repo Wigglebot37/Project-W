@@ -46,7 +46,8 @@ if(!instance_exists(obj_cutscene)) {
 	}
 }
 
-if(!instance_exists(obj_cutscene) && !obj_game.transitionbool && active_textbox==noone && !pause && !ready && !obj_ctrl_battle.start_battle) {
+if(!instance_exists(obj_cutscene) && !obj_game.transitionbool && active_textbox==noone 
+	&& !pause && !ready && room!=rm_battlescreen) {
 	if(!running && hinput==0 && vinput==0) prepress=false;
 	else prepress=true;
 	
@@ -129,11 +130,16 @@ if (inst!=noone) {
 }
 #endregion
 
-// One-use Trigger
+// Cutscene Triggers
 if(!instance_exists(obj_cutscene)) {
 	var cut_inst=instance_place(x,y,obj_trigger_par);
 	if(cut_inst!=noone) {
 		running=false;
+		hinput=0;
+		vinput=0;
+		spd=0;
+		image_index=1;
+		image_speed=0;
 		with(cut_inst) {
 			create_cutscene(t_scene_info);
 			if(cut_inst.object_index==obj_trigger) instance_destroy();
@@ -194,8 +200,7 @@ if(!instance_exists(obj_cutscene)) {
 		}
 	}
 	#endregion
-	
-	//Makes it so walking sprite does not animate during collision
+	#region //Makes it so walking sprite does not animate during collision
 	if((place_meeting(x, y-spd, obj_wall) && dir==dir_up)
 	|| (place_meeting(x, y+spd, obj_wall) && dir==dir_down)
 	|| (place_meeting(x+spd, y, obj_wall) && dir==dir_right)
@@ -215,6 +220,7 @@ if(!instance_exists(obj_cutscene)) {
 		ready2=0;
 		followers=false;
 	}
+	#endregion
 }
 #region //Sprite Changes
 if(running) sprite_index=spr_trplayer;
@@ -303,6 +309,19 @@ if(invincible) {
 #endregion
 #region //Enemy Collision
 var inst=instance_place(x,y,obj_par_enemy);
+
+if(obj_ctrl_battle.start_battle) {
+	var ob=noone;
+	for(var i=0; i<pl_count; i++) {
+		switch(i) {
+			case 0: ob=playerinst; break;
+			case 1: ob=partyinst2; break;
+			case 2: ob=partyinst3; break;
+			case 3: ob=partyinst4; break;
+		}
+	}
+}
+
 if(inst!=noone && !invincible) {
 	running=false;
 	with(obj_ctrl_battle) {
@@ -312,6 +331,7 @@ if(inst!=noone && !invincible) {
 			spX=obj_player.x; spY=spawnY=obj_player.y;
 			spRoom=inst.targetRoom;
 			enemy=inst.object_index;
+			obj_camera.cam_follow=inst;
 			start_battle=true;
 		}
 	}
@@ -320,23 +340,24 @@ if(keyboard_check_pressed(vk_space)) playerflip=!playerflip;
 if(room==rm_battlescreen) {
 	var o=163;
 	dir=dir_up;
-	obj_party.dir=dir_up;
-	if(!playerflip) {
-		o=0; dir=dir_down; obj_party.dir=dir_down;
+	if(pl_count>1) obj_party.dir=dir_up;
+	if(playerflip) {
+		o=0; dir=dir_down; if(pl_count>1) obj_party.dir=dir_down;
 	}
 	y=o+52*3/4; x=320/(pl_count+1);
-	with(obj_party) {
+	if(pl_count>1) with(obj_party) {
 		y=o+(52*3/4);
 		x=(320/(pl_count+1))*(player_index+1);
 	}
 }
 #endregion
-
 if(running && diagtouchprev && !diagtouch && hinput==0 && vinput==0) dir=enddir;
 depth=-y;
 direction=dir;
 speed=spd;
-if((hinput!=0 || vinput!=0) && !prepress) image_index=2;
+if(spd==0) image_speed=0;
+if((hinput!=0 || vinput!=0) && !prepress) image_index=1;
 if(obj_pause_menu.start_pause) { img_spd=image_speed; obj_pause_menu.start_pause=false; }
-if(pause || obj_game.transitionbool || obj_ctrl_battle.start_battle) { image_speed=0; speed=0; image_index=1; }
-if((!running && hinput==0 && vinput==0 && !instance_exists(obj_cutscene)) || ready || ready2) speed=0;
+if(pause || obj_game.transitionbool || room==rm_battlescreen ||
+	(!running && hinput==0 && vinput==0 && !instance_exists(obj_cutscene))) { image_speed=0; speed=0; image_index=1; }
+if(ready || ready2) speed=0;

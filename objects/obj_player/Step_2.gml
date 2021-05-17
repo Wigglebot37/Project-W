@@ -43,19 +43,19 @@ if(input_interact && active_textbox==noone && !pause && !zswitch) {
 	}
 }
 
-if(room!=rm_battlescreen) {
-	if((hinput!=0 || vinput!=0 || running) && followers){
-	    for(var c=60; c>0; c--){
-	        prevx[c] = prevx[c - 1];
-	        prevy[c] = prevy[c - 1];
-	        prevd[c] = prevd[c - 1];
+if(room!=rm_battlescreen && !obj_ctrl_battle.start_battle) {
+	if((hinput!=0 || vinput!=0 || running) && followers) {
+	    for(var c=60; c>0; c--) {
+	        prevx[c]=prevx[c-1];
+	        prevy[c]=prevy[c-1];
+	        prevd[c]=prevd[c-1];
 	    }
-	    prevx[0] = x;
-	    prevy[0] = y;
-	    prevd[0] = direction;
+	    prevx[0]=x;
+	    prevy[0]=y;
+	    prevd[0]=direction;
 	}
 	//Party members' direction handle and position update
-	with(obj_party){
+	with(obj_party) {
 	    x=other.prevx[player_index*20];
 	    y=other.prevy[player_index*20];
 	    dir=other.prevd[player_index*20];

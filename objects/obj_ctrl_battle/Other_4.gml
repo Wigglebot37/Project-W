@@ -1,5 +1,7 @@
 if(room==rm_battlescreen) {
 	if(p1!=noone) player1=instance_create_layer(640/4,50,"Characters",obj_player);
+	playerinst=player1;
+	playerinst.dir=dir_up;
 	fighter1=instance_create_layer(0,0,"Characters",player1.fighter);
 	enemy1=instance_create_layer(0,0,"Characters",obj_enemy1);
 	background1=instance_create_layer(0,0,"Instances",obj_battle_bckg);

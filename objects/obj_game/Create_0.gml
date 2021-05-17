@@ -77,12 +77,16 @@ enum txtfx {
 }
 
 // Party
-globalvar p1,p2,p3,p4,pl_count;
+globalvar p1,p2,p3,p4,playerinst,partyinst2,partyinst3,partyinst4,pl_count;
 p1=obj_everett;
 p2=obj_teammate2;
 p3=obj_teammate2;
 p4=obj_teammate2;
-pl_count=2;
+playerinst=-1;
+partyinst2=-1;
+partyinst3=-1;
+partyinst4=-1;
+pl_count=1;
 
 // Button Maps
 globalvar key_revert,key_interact,key_up,key_left,key_down,key_right,key_pause,key_enter;

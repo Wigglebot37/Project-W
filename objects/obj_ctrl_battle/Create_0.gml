@@ -1,5 +1,7 @@
 start_battle=false;
 end_battle=false;
+x_dest=-1;
+y_dest=-1;
 
 //Call this once in your object before using the shader script
 col1 = make_color_rgb(0.8*255,0,0);
@@ -9,9 +11,6 @@ DissolveSettings(sDissolve2_big_test,0,col1,col2,0.2);
 fighter1=noone;
 enemy1=noone;
 player1=noone;
-player2=noone;
-player3=noone;
-player4=noone;
 
 fade=0;
 fade2=1;
