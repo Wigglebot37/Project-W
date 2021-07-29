@@ -84,8 +84,8 @@ function battle_setup(trg_id) {
 				y_dest=trg_id.y+60;
 			}
 			if(point_distance(x,y,x_dest,y_dest)>new_spd) {
-				if(x<x_dest+new_spd && x>x_dest-new_spd) x=x_dest;
-				if(y<y_dest+new_spd && y>y_dest-new_spd) y=y_dest;
+				if(x<=x_dest+new_spd && x>=x_dest-new_spd) x=x_dest;
+				if(y<=y_dest+new_spd && y>=y_dest-new_spd) y=y_dest;
 				var new_dir=point_direction(x,y,x_dest,y_dest);
 				spd=new_spd;
 		
@@ -103,8 +103,6 @@ function battle_setup(trg_id) {
 				spd=0;
 				image_speed=0;
 				image_index=1;
-				x_dest=-1;
-				y_dest=-1;
 				hinput=0;
 				vinput=0;
 				dir=dir_up;

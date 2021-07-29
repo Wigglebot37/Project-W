@@ -93,7 +93,8 @@ globalvar key_revert,key_interact,key_up,key_left,key_down,key_right,key_pause,k
 // Key Presses
 globalvar input_enter,input_up,input_left,input_down,input_right,input_up_perm,input_left_perm,input_down_perm,input_right_perm,
 	input_up_pres,input_left_pres,input_down_pres,input_right_pres,input_ready,input_revert,input_run, 
-	input_interact,input_pause,dir_up, dir_upright, dir_right, dir_downright, dir_down, dir_downleft, dir_left, dir_upleft;
+	input_interact,input_interact_pres,input_pause,
+	dir_up, dir_upright, dir_right, dir_downright, dir_down, dir_downleft, dir_left, dir_upleft;
 
 gamepad=false;
 win=false;

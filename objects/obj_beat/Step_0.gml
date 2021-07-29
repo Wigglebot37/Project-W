@@ -4,15 +4,15 @@ total_seconds+=(delta_time*0.000001);
 var value=total_seconds mod beateveryxseconds;
 if(value<=0.02) current_pal=1; //makes objects pulse to the beat!
 if((value<=val1 || value>=val2) && !pause) {
-	if(input_interact && !draw) {
+	if(input_interact_pres && !draw) {
 		draw=true;
 		comboval++;
 		comboend=false;
 		with(obj_battle_ctrl) enemy.flash=1;
-	} else if(input_interact) comboval=0;
+	} else if(input_interact_pres) comboval=0;
 	else if(!draw) comboend=true;
 } else if((value>val1 && value<val2) && !pause) {
-	if(input_interact) comboval=0;
+	if(input_interact_pres) comboval=0;
 	if(comboend) { comboval=0; comboend=false; }
 	draw=false;
 }

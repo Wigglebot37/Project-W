@@ -1,8 +1,5 @@
 {
-  "spriteId": {
-    "name": "spr_packbot",
-    "path": "sprites/spr_packbot/spr_packbot.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
@@ -21,16 +18,17 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Battles",
-    "path": "folders/Objects/Battles.yy",
+    "name": "Plants",
+    "path": "folders/Objects/Plants.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_packbot",
+  "name": "obj_par_tree",
   "tags": [],
   "resourceType": "GMObject",
 }

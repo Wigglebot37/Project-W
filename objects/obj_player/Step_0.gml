@@ -3,7 +3,6 @@
 //var beachdist=distance_to_object(instance_nearest(x,y,obj_wall_beach));
 //if(beachdist<maxdist) audio_sound_gain(snd_beach,(maxdist-beachdist)/maxdist,0);
 followers=true;
-
 if(obj_pause_menu.end_pause || obj_game.end_tran) { image_speed=img_spd; obj_pause_menu.end_pause=false; obj_game.end_tran=false;
 	if(!running && ready2==1) {running=true; ready=false; ready2=0;} else {ready=false; ready2=0;} }
 
@@ -101,6 +100,7 @@ if(!instance_exists(obj_cutscene) && !obj_game.transitionbool && active_textbox=
 	} //Ends transitionbool statement
 	#endregion
 } else followers=false;
+
 #region //Room transition collision check
 var inst=instance_place(x, y, tran);
 if (inst!=noone) {
@@ -134,6 +134,14 @@ if (inst!=noone) {
 if(!instance_exists(obj_cutscene)) {
 	var cut_inst=instance_place(x,y,obj_trigger_par);
 	if(cut_inst!=noone) {
+		if(instance_exists(obj_party)) with(obj_party) {
+			running=false;
+			hinput=0;
+			vinput=0;
+			spd=0;
+			image_index=1;
+			image_speed=0;
+		}
 		running=false;
 		hinput=0;
 		vinput=0;

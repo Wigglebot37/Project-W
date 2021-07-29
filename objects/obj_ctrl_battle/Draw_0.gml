@@ -16,6 +16,7 @@ if(room==rm_battlescreen) {
 	var spr=attack_sprite, xo=sprite_get_xoffset(spr),yo=sprite_get_yoffset(spr),col=0,
 		wid=sprite_get_width(spr),hgt=sprite_get_height(spr),xx=0,yy=0,maxindex=4;
 	var ix=0,iy=0,num=0,numx=0,numy=0,flipspd=0.5;
+	var x1=-1,y1=-1,x2=-1,y2=-1,x3=-1,y3=-1,x4=-1,y4=-1;
 	if(sprite_change) {
 		object_set_sprite(obj_attrange,attack_sprite);
 		var inst=instance_create_depth(xo,yo,0,obj_attrange);
@@ -87,9 +88,13 @@ if(room==rm_battlescreen) {
 		draw_sprite_ext(spr_battlegrid,fliparray[num-1],battlex,battley,1,1,flipdir[num-1]+90,c_white,1)
 		pal_swap_reset();
 		
+		if(posx1!=-1) if(num==tiles2D[posx1,posy]) { x1=battlex; y1=battley; }
+		if(posx2!=-1) if(num==tiles2D[posx2,posy]) { x2=battlex; y2=battley; }
+		if(posx3!=-1) if(num==tiles2D[posx3,posy]) { x3=battlex; y3=battley; }
+		if(posx4!=-1) if(num==tiles2D[posx4,posy]) { x4=battlex; y4=battley; }
+		
 		if(num==numselect) { numx=battlex; numy=battley; }
-		if(num==ran) { fighter1.x=battlex; fighter1.y=battley; }
-		if(num==ran2) { enemy1.x=battlex; enemy1.y=battley; }
+		if(num==ran) { enemy1.x=battlex; enemy1.y=battley; }
 		//if(viable[ix,iy]==0) draw_sprite(spr_battlesel,image_index,battlex,battley);
 		ix++;
 		if(ix>15) { ix=0; iy++; }
@@ -100,6 +105,12 @@ if(room==rm_battlescreen) {
 	}
 	image_speed=0.08;
 	draw_sprite(spr_battlesel,image_index,numx,numy);
+	if(bot1.x!=x1) {
+		if(x1!=-1) { bot1.x=x1; bot1.y=y1; }
+		if(x2!=-1) { bot2.x=x2; bot2.y=y2; }
+		if(x3!=-1) { bot3.x=x3; bot3.y=y3; }
+		if(x4!=-1) { bot4.x=x4; bot4.y=y4; }
+	}
 	
 	// Helps measure pixels
 	//var yii=0;

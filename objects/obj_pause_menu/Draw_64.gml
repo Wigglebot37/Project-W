@@ -6,7 +6,7 @@ _alpha_mono=shader_get_uniform(shd_monochrome,"_alpha_mono");
 shader_set(shd_monochrome);
 shader_set_uniform_f(_alpha_mono,alpha2);
 //shader_set_uniform_f(blur,alpha);
-draw_surface_part(application_surface,0,0,game_width,game_height,0,0);
+draw_surface_part_ext(application_surface,0,0,game_width,game_height,0,0,scalar,scalar,c_white,1);
 shader_reset();
 
 var gwidth=game_width, gheight=game_height;

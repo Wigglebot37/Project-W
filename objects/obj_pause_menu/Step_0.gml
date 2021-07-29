@@ -102,7 +102,7 @@ if(page!=menu_page.Inventory && page!=menu_page.Skills) {
 		}
 	}
 }
-if((input_enter || input_interact) && page!=menu_page.Inventory && page!=menu_page.Skills) {
+if((input_enter || input_interact_pres) && page!=menu_page.Inventory && page!=menu_page.Skills) {
 	audio_play_sound(snd_select1,50,false);
 	switch(ds_grid[# 2,menu_option[page]]) {
 		case menu_element_type.script_runner:

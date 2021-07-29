@@ -23,7 +23,8 @@ if(room==rm_battlescreen) {
 	if(fade2>0 && !flipstart) fade2-=0.01;
 	var hinput=(input_right-input_left);
 	var vinput=(input_down-input_up);
-	
+	var interact=input_interact_pres;
+	if(interact) { hinput=0; vinput=0; } //To prevent selecting and moving in same frame
 	if(hinput!=0 || vinput!=0) {
 		if(delay==0) dir=point_direction(0,0,hinput,vinput);
 		if(diagcheck) {

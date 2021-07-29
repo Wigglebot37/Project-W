@@ -71,4 +71,3 @@ zspeed=2;
 zgrav=0;
 z=0;
 depth=-y;
-pl_count=3;

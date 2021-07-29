@@ -14,7 +14,7 @@ if(selected_slot!=inv_slots && input_right_perm && !inputting) selected_slot+=1;
 if(selected_slot<0) selected_slot=0;
 else if(selected_slot>=inv_slots) selected_slot=inv_slots-1;
 
-if((input_interact || input_enter) && inputting && !char_select) {
+if((input_interact_pres || input_enter) && inputting && !char_select) {
 	switch(select_opt) {
 		case 0:
 		case 1:/* char_select=true;*/ break;
@@ -28,7 +28,7 @@ if((input_interact || input_enter) && inputting && !char_select) {
 			select_opt=0;
 		break;
 	}
-} else if(!obj_pause_menu.trigger && (input_interact || input_enter) && !inputting) inputting=true;
+} else if(!obj_pause_menu.trigger && (input_interact_pres || input_enter) && !inputting) inputting=true;
 else if(inputting && (input_revert || input_pause)) {
 	inputting=false; select_opt=0;
 }

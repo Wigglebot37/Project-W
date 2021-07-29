@@ -1,5 +1,5 @@
 /// @description Spritework
-if(instance_exists(obj_player)) {
+if(instance_exists(obj_player) && !instance_exists(obj_cutscene)) {
 	running=obj_player.running;
 	ready2=obj_player.ready2;
 	ready=obj_player.ready;
@@ -67,4 +67,4 @@ if(!running && !ready) {
 			speed=0; image_index=1;
 		}
 }
-if((!running && hinput==0 && vinput==0 && spd==0) || room==rm_battlescreen) { image_index=1; image_speed=0; } 
+if((!running && hinput==0 && vinput==0 && spd==0) || room==rm_battlescreen) { image_index=1; image_speed=0; }

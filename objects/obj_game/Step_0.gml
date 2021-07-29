@@ -52,7 +52,8 @@ var maxpads=gamepad_get_device_count(); for(var i=0; i<maxpads; i++) {
 		input_ready=gamepad_button_check(i,key_revert);
 		input_revert=gamepad_button_check_pressed(i,key_revert);
 		input_run=gamepad_button_check_released(i,key_revert);
-		input_interact=gamepad_button_check_pressed(i,key_interact);
+		input_interact_pres=gamepad_button_check_pressed(i,key_interact);
+		input_interact=gamepad_button_check(i,key_interact);
 		input_pause=gamepad_button_check_pressed(i,key_pause);
 		
 		gamepad=true;
@@ -76,7 +77,8 @@ if(!gamepad) {
 	input_ready=keyboard_check(key_revert);
 	input_revert=keyboard_check_pressed(key_revert);
 	input_run=keyboard_check_released(key_revert);
-	input_interact=keyboard_check_pressed(key_interact);
+	input_interact_pres=keyboard_check_pressed(key_interact);
+	input_interact=keyboard_check(key_interact);
 	input_pause=keyboard_check_pressed(key_pause);
 }
 

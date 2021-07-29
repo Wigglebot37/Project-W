@@ -2,7 +2,27 @@ if(room==rm_battlescreen) {
 	if(p1!=noone) player1=instance_create_layer(640/4,50,"Characters",obj_player);
 	playerinst=player1;
 	playerinst.dir=dir_up;
-	fighter1=instance_create_layer(0,0,"Characters",player1.fighter);
+	switch(pl_count) {
+		case 4: bot4=instance_create_layer(0,0,"Characters",obj_packbot);
+		case 3: bot3=instance_create_layer(0,0,"Characters",obj_packbot);
+		case 2: bot2=instance_create_layer(0,0,"Characters",obj_packbot);
+		case 1: bot1=instance_create_layer(0,0,"Characters",obj_packbot);
+		break;
+	}
+	switch(pl_count) {
+		case 1: 
+			posx1=7;
+		break;
+		case 2: 
+			posx1=4; posx2=11;
+		break;
+		case 3: 
+			posx1=3; posx2=7; posx3=12;
+		break;
+		case 4: 
+			posx1=2; posx2=6; posx3=9; posx4=13;
+		break;
+	}
 	enemy1=instance_create_layer(0,0,"Characters",obj_enemy1);
 	background1=instance_create_layer(0,0,"Instances",obj_battle_bckg);
 	with(background1) {
