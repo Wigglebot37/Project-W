@@ -2,6 +2,8 @@
 //if(keyboard_check_pressed(vk_space)) flash=1;
 //var beachdist=distance_to_object(instance_nearest(x,y,obj_wall_beach));
 //if(beachdist<maxdist) audio_sound_gain(snd_beach,(maxdist-beachdist)/maxdist,0);
+x=round(x);
+y=round(y);
 followers=true;
 if(obj_pause_menu.end_pause || obj_game.end_tran) { image_speed=img_spd; obj_pause_menu.end_pause=false; obj_game.end_tran=false;
 	if(!running && ready2==1) {running=true; ready=false; ready2=0;} else {ready=false; ready2=0;} }

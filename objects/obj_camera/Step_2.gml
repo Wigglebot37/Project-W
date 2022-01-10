@@ -7,14 +7,14 @@ view_zoom=clamp(view_zoom,1,view_max_zoom);
 camera_set_view_size(view,ideal_width/view_zoom,ideal_height/view_zoom);
 
 if(instance_exists(cam_follow)) {
-	//Allows for gradual camera movement if needed
-	if(!snapx && (xTo-_curx)<=1 && (xTo-_curx)>=-1) {
+	/*/Allows for gradual camera movement if needed
+	if(!snapx && (xTo-_curx)<=snapval && (xTo-_curx)>=-snapval) {
 		_curx=xTo; snapx=true;
-	} else if(snapx && (xTo-_curx)>1.5 && (xTo-_curx)<-1.5) snapx=false;
+	} else if(snapx && ((xTo-_curx)>snapval || (xTo-_curx)<-snapval)) snapx=false;
 
-	if(!snapy && (yTo-_cury)<=1 && (yTo-_cury)>=-1) {
+	if(!snapy && (yTo-_cury)<=snapval && (yTo-_cury)>=-snapval) {
 		_cury=yTo; snapy=true;
-	} else if(snapy && (yTo-_cury)>1.5 && (yTo-_cury)<-1.5) snapy=false;
+	} else if(snapy && ((yTo-_cury)>snapval || (yTo-_cury)<-snapval)) snapy=false;
 
 	if(!pause) {
 		_curx+=(xTo-_curx)/factor;
@@ -24,6 +24,10 @@ if(instance_exists(cam_follow)) {
 	if(cam_follow!=noone) {
 		xTo=floor(cam_follow.x);
 		yTo=floor(cam_follow.y-16);
+	}*/
+	if(cam_follow!=noone) {
+		_curx=lerp(_curx,cam_follow.x,0.08);
+		_cury=lerp(_cury,cam_follow.y-16,0.08);
 	}
 	
 	var _x=clamp(_curx-ideal_width/view_zoom/2,0,room_width-view_width);

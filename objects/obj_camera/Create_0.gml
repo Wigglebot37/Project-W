@@ -5,8 +5,8 @@ view_width=1920/6;
 view_height=1080/6;
 display_w=display_get_width();
 display_h=display_get_height();
-if(window_get_fullscreen()) scalar=3;
-else scalar=1;
+if(window_get_fullscreen()) scalar=3*.5;
+else scalar=1*.5;
 fullswitch=true;
 
 window_scale=2;
@@ -24,6 +24,7 @@ yTo=y;
 snapx=false;
 snapy=false;
 factor=20;
+snapval=1;
 
 _curx=camera_get_view_x(view);
 _cury=camera_get_view_y(view);
