@@ -200,45 +200,53 @@ if(yy==boxstart) {
 					default: cx+=charSize*sc+2*sc;
 				}*/
 				switch(char) {
-					#region // 4-wide
-					case "0":
-					case "2":
-					case "3":
-					case "4":
-					case "5":
-					case "6":
-					case "7":
-					case "&":
-					case "J":
-					case "L":
-					case "b":
-					case "c":
-					case "d":
-					case "e":
-					case "f":
-					case "g":
-					case "h":
-					case "k":
-					case "n":
-					case "o":
-					case "p":
-					case "q":
-					case "r":
-					case "s":
-					case "t":
-					case "u":
-					case "v":
-					case "y":
+					#region // Character spacing
+					// 7-wide
+					case "w":
+					case "m":
+					case "Z":
+					case "Y":
+					case "X":
+					case "W":
+					case "T":
+					case "N":
+					case "M": cx+=charSize*sc+6*sc; break;
+					// 5-wide
 					case "z":
-					case " ":
-					case "(":
-					case ")": cx+=charSize*sc+4*sc; break;
-					#endregion
-					// 3-wide
+					case "y":
+					case "x":
+					case "v":
+					case "u":
+					case "t":
+					case "s":
+					case "r":
+					case "q":
+					case "p":
+					case "o":
+					case "n":
+					case "h":
+					case "g":
+					case "f":
+					case "e":
+					case "d":
+					case "c":
+					case "b":
+					case "?":
+					case "%":
+					case "/":
+					case "L":
 					case "I":
-					case "i":
+					case "J": cx+=charSize*sc+2*sc; break;
+					// 4-wide
+					case "k":
 					case "j":
-					case "l": cx+=charSize*sc-2*sc; break;
+					case "(":
+					case ")": cx+=charSize*sc; break;
+					// 3-wide
+					case "":
+					case "l":
+					case "i":
+					case "1": cx+=charSize*sc-2*sc; break;
 					// 2-wide
 					case ",":
 					case "'":
@@ -247,8 +255,9 @@ if(yy==boxstart) {
 					case ":":
 					case ".":
 					case "!": cx+=charSize*sc-6*sc; break;
-					// 7-wide
-					default: cx+=charSize*sc+6*sc;
+					// 6-wide
+					default: cx+=charSize*sc+4*sc;
+					#endregion
 				}
 			}
 			#endregion
