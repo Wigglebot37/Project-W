@@ -2,8 +2,7 @@
 //if(keyboard_check_pressed(vk_space)) flash=1;
 //var beachdist=distance_to_object(instance_nearest(x,y,obj_wall_beach));
 //if(beachdist<maxdist) audio_sound_gain(snd_beach,(maxdist-beachdist)/maxdist,0);
-x=round(x);
-y=round(y);
+prevdir=direction;
 followers=true;
 if(obj_pause_menu.end_pause || obj_game.end_tran) { image_speed=img_spd; obj_pause_menu.end_pause=false; obj_game.end_tran=false;
 	if(!running && ready2==1) {running=true; ready=false; ready2=0;} else {ready=false; ready2=0;} }
@@ -56,10 +55,12 @@ if(!instance_exists(obj_cutscene) && !obj_game.transitionbool && active_textbox=
 	vinput=(input_down-input_up)*spd;
 	
 	if(hinput!=0 || vinput!=0) {
-		dir=point_direction(x,y, x+hinput, y+vinput);
+		dir=round(point_direction(x,y, x+hinput, y+vinput));
 	} else if(!running) {
 		hinput=0;
 		vinput=0;
+		x=round(x);
+		y=round(y);
 	}
 	#region // Diagonal wall collisions
 	diagtouchprev=diagtouch;
@@ -362,8 +363,26 @@ if(room==rm_battlescreen) {
 }
 #endregion
 if(running && diagtouchprev && !diagtouch && hinput==0 && vinput==0) dir=enddir;
+if(direction!=prevdir) {
+	x=round(x);
+	y=round(y);
+}
+if(dir!=dir_left && dir!=dir_right && dir!=dir_up && dir!=dir_down && spd!=0) {
+	//spd=sqrt(2);
+	if(triggeralarm) {
+		triggeralarm=false;
+		alarm[0]=3;
+	}
+} else {
+	stopframe=false;
+}
 depth=-y;
 direction=dir;
+if(stopframe) {
+	//spd=2*sqrt(2);
+	stopframe=false;
+}
+show_debug_message(spd);
 speed=spd;
 if(spd==0) image_speed=0;
 if((hinput!=0 || vinput!=0) && !prepress) image_index=1;

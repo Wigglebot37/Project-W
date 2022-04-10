@@ -30,7 +30,7 @@ empty=false;
 running=false;
 ready=false;
 ready2=0;
-walk_spd=1;
+walk_spd=sqrt(2);
 run_spd=2;
 spd=walk_spd;
 hinput=0;
@@ -71,3 +71,6 @@ zspeed=2;
 zgrav=0;
 z=0;
 depth=-y;
+
+triggeralarm=true;
+stopframe=false;

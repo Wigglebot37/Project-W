@@ -25,13 +25,23 @@ if(instance_exists(cam_follow)) {
 		xTo=floor(cam_follow.x);
 		yTo=floor(cam_follow.y-16);
 	}*/
+	factor=1;
+	if(cam_follow==obj_player) {
+		factor=cam_follow.spd;
+		if(cam_follow.spd==0) factor=1;
+	}
 	if(cam_follow!=noone) {
-		_curx=lerp(_curx,cam_follow.x,0.08);
-		_cury=lerp(_cury,cam_follow.y-16,0.08);
+		//_curx=cam_follow.x;
+		//_cury=cam_follow.y;
+		_curx=lerp(_curx,round(cam_follow.x),0.08/factor);
+		_cury=lerp(_cury,round(cam_follow.y-16),0.08/factor);
+		if(abs(_curx-cam_follow.x)<1) _curx=cam_follow.x;
+		if(abs(_cury-cam_follow.y-16)<1) _cury=cam_follow.y;
 	}
 	
 	var _x=clamp(_curx-ideal_width/view_zoom/2,0,room_width-view_width);
 	var _y=clamp(_cury-ideal_height/view_zoom/2,0,room_height-view_height);
+	show_debug_message(_x);
 	
 	camera_set_view_pos(view,_x,_y);
 }

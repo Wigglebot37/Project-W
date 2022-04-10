@@ -1,4 +1,4 @@
-follow=noone;
+_follow=noone;
 xTo=x;
 yTo=y;
 snapx=false;

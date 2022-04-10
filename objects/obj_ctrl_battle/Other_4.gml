@@ -26,10 +26,10 @@ if(room==rm_battlescreen) {
 	enemy1=instance_create_layer(0,0,"Characters",obj_enemy1);
 	background1=instance_create_layer(0,0,"Instances",obj_battle_bckg);
 	with(background1) {
-		back=spr_battle_back1; effect=3; image_speed=0.05;
+		back=spr_back_wavy; effect=3; image_speed=0.05;
 	} background2=instance_create_layer(0,0,"Instances",obj_battle_bckg);
 	with(background2) {
-		back=spr_back_rain; effect=1; speedy=0.8;
+		back=spr_battle_back1; effect=1; speedy=0.8;
 	}
 	#region //List of things that can be affected and their defaults
 	/*

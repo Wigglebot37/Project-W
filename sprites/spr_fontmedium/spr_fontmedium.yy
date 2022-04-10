@@ -355,7 +355,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_fontmedium","path":"sprites/spr_fontmedium/spr_fontmedium.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_fontmedium",
     "tags": [],
     "resourceType": "GMSequence",

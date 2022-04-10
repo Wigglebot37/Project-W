@@ -12,12 +12,12 @@ if(!pause) {
 	y+=(yTo-y)/factor;
 }
 
-if(instance_exists(obj_player)) follow=obj_player;
-else follow=noone;
+if(instance_exists(obj_player)) _follow=obj_player;
+else _follow=noone;
 
-if(follow!=noone) {
-	xTo=floor(follow.x);
-	yTo=floor(follow.y-16);
+if(_follow!=noone) {
+	xTo=floor(_follow.x);
+	yTo=floor(_follow.y-16);
 }
 
 var zoomspeed=0.2;
